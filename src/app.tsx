@@ -1,14 +1,20 @@
 import * as csstips from "csstips";
+import { px } from "csx";
 import * as React from "react";
 import Helmet from "react-helmet";
 import { connect } from "react-redux";
-import { RouteComponentProps, withRouter } from "react-router";
-import { matchPath, Route, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
+import { matchPath, Redirect, Route, Switch } from "react-router-dom";
 import { Dispatch } from "redux";
 import { cssRule, style } from "typestyle";
 
+import Http500 from "./components/status/Http500";
+import Navbar from "./containers/Navbar";
+import { RootState } from "./reducers";
+import { UserState } from "./reducers/user";
 import routes, { RouteArgs } from "./routes";
 import { DEFAULT_HTML_TITLE } from "./settings";
+import { PageRoutingProps } from "./utils/routing";
 
 cssRule("body", {
   fontFamily: "sans-serif",
@@ -22,12 +28,16 @@ cssRule("a", {
       textDecoration: "underline",
     },
   },
+  cursor: "pointer",
 });
 
 const verticalRoot = style(csstips.fillParent, csstips.vertical);
+const addSpaceBottom = { marginBottom: px(50) };
 
-interface AppProps extends RouteComponentProps<any> {
+interface AppProps extends PageRoutingProps<any> {
   dispatch: Dispatch;
+  showErrorPage: boolean;
+  user: UserState;
 }
 
 class App extends React.Component<AppProps> {
@@ -41,7 +51,7 @@ class App extends React.Component<AppProps> {
     });
   }
 
-  private paginate = (routing: RouteComponentProps<any>, routeArgs: RouteArgs) => {
+  private paginate = (routing: PageRoutingProps<any>, routeArgs: RouteArgs) => {
     const fullTitle = `${routeArgs.title} | ${DEFAULT_HTML_TITLE}`;
     const fullDescription = routeArgs.description
       ? `${routeArgs.description} | ${DEFAULT_HTML_TITLE}`
@@ -50,12 +60,37 @@ class App extends React.Component<AppProps> {
       { name: "description", content: fullDescription },
       { name: "viewport", content: "width=device-width" },
     ];
-    const Component = routeArgs.component;
+
+    let Component = null;
+    if (this.props.showErrorPage) {
+      Component = <Http500 routing={routing} />;
+    } else if (routeArgs.PrivateComponent) {
+      Component = this.props.user ? (
+        <routeArgs.PrivateComponent routing={routing} />
+      ) : (
+        <Redirect to={`/login?redirect=${routing.location.pathname}`} />
+      );
+    } else if (routeArgs.PublicComponent) {
+      Component = this.props.user ? (
+        <Redirect to="/" />
+      ) : (
+        <routeArgs.PublicComponent routing={routing} />
+      );
+    } else if (routeArgs.Component) {
+      Component = <routeArgs.Component routing={routing} />;
+    }
 
     return (
       <div>
         <Helmet title={fullTitle} meta={meta} />
-        <Component routing={routing} />
+        <div className={style(csstips.flex, addSpaceBottom)}>
+          <Navbar
+            hideNavbar={routeArgs.hideNavbar}
+            hideLogin={routeArgs.hideLogin}
+            routing={routing}
+          />
+          {Component}
+        </div>
       </div>
     );
   };
@@ -91,4 +126,9 @@ class App extends React.Component<AppProps> {
   }
 }
 
-export default withRouter(connect()(App));
+const mapStateToProps = (state: RootState) => ({
+  showErrorPage: state.showErrorPage,
+  user: state.user,
+});
+
+export default withRouter(connect(mapStateToProps)(App));

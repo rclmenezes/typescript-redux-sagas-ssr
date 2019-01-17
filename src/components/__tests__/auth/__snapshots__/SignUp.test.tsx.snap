@@ -1,0 +1,620 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test SignUp Submit successfully 1`] = `
+<SignUpPage
+  routing={
+    Object {
+      "history": Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 2,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "",
+          "pathname": "",
+          "search": "",
+          "state": Object {},
+        },
+        "push": [Function],
+        "replace": [Function],
+      },
+      "location": Object {
+        "hash": "",
+        "key": "",
+        "pathname": "",
+        "search": "",
+        "state": Object {},
+      },
+      "match": Object {
+        "isExact": true,
+        "params": Object {},
+        "path": "",
+        "url": "",
+      },
+      "staticContext": Object {
+        "status": 200,
+      },
+    }
+  }
+  signUpSubmit={[MockFunction]}
+  user={null}
+>
+  <BaseAuthPage
+    title="Sign Up"
+  >
+    <Container
+      text={true}
+    >
+      <div
+        className="ui text container"
+      >
+        <Header
+          as="h1"
+          textAlign="center"
+        >
+          <h1
+            className="ui center aligned header"
+          >
+            Sign Up
+          </h1>
+        </Header>
+        <WithFormik(InnerSignUpForm)
+          routing={
+            Object {
+              "history": Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 2,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "key": "",
+                  "pathname": "",
+                  "search": "",
+                  "state": Object {},
+                },
+                "push": [Function],
+                "replace": [Function],
+              },
+              "location": Object {
+                "hash": "",
+                "key": "",
+                "pathname": "",
+                "search": "",
+                "state": Object {},
+              },
+              "match": Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "",
+                "url": "",
+              },
+              "staticContext": Object {
+                "status": 200,
+              },
+            }
+          }
+          signUpSubmit={[MockFunction]}
+          user={null}
+        >
+          <Formik
+            enableReinitialize={false}
+            handleSubmit={[Function]}
+            initialValues={
+              Object {
+                "email": "",
+                "password": "",
+              }
+            }
+            isInitialValid={false}
+            onSubmit={[Function]}
+            render={[Function]}
+            routing={
+              Object {
+                "history": Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "createHref": [Function],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "length": 2,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "",
+                    "pathname": "",
+                    "search": "",
+                    "state": Object {},
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                },
+                "location": Object {
+                  "hash": "",
+                  "key": "",
+                  "pathname": "",
+                  "search": "",
+                  "state": Object {},
+                },
+                "match": Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "",
+                  "url": "",
+                },
+                "staticContext": Object {
+                  "status": 200,
+                },
+              }
+            }
+            signUpSubmit={[MockFunction]}
+            user={null}
+            validateOnBlur={true}
+            validateOnChange={true}
+            validationSchema={[Function]}
+          >
+            <InnerSignUpForm
+              dirty={false}
+              errors={Object {}}
+              handleBlur={[Function]}
+              handleChange={[Function]}
+              handleReset={[Function]}
+              handleSubmit={[Function]}
+              initialValues={
+                Object {
+                  "email": "",
+                  "password": "",
+                }
+              }
+              isSubmitting={false}
+              isValid={false}
+              isValidating={false}
+              registerField={[Function]}
+              resetForm={[Function]}
+              routing={
+                Object {
+                  "history": Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "createHref": [Function],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "length": 2,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "key": "",
+                      "pathname": "",
+                      "search": "",
+                      "state": Object {},
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  },
+                  "location": Object {
+                    "hash": "",
+                    "key": "",
+                    "pathname": "",
+                    "search": "",
+                    "state": Object {},
+                  },
+                  "match": Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "",
+                    "url": "",
+                  },
+                  "staticContext": Object {
+                    "status": 200,
+                  },
+                }
+              }
+              setError={[Function]}
+              setErrors={[Function]}
+              setFieldError={[Function]}
+              setFieldTouched={[Function]}
+              setFieldValue={[Function]}
+              setFormikState={[Function]}
+              setStatus={[Function]}
+              setSubmitting={[Function]}
+              setTouched={[Function]}
+              setValues={[Function]}
+              signUpSubmit={[MockFunction]}
+              submitCount={0}
+              submitForm={[Function]}
+              touched={Object {}}
+              unregisterField={[Function]}
+              user={null}
+              validateField={[Function]}
+              validateForm={[Function]}
+              validateOnBlur={true}
+              validateOnChange={true}
+              values={
+                Object {
+                  "email": "",
+                  "password": "",
+                }
+              }
+            >
+              <Form>
+                <Component
+                  formik={
+                    Object {
+                      "dirty": false,
+                      "errors": Object {},
+                      "handleBlur": [Function],
+                      "handleChange": [Function],
+                      "handleReset": [Function],
+                      "handleSubmit": [Function],
+                      "initialValues": Object {
+                        "email": "",
+                        "password": "",
+                      },
+                      "isSubmitting": false,
+                      "isValid": false,
+                      "isValidating": false,
+                      "registerField": [Function],
+                      "resetForm": [Function],
+                      "setError": [Function],
+                      "setErrors": [Function],
+                      "setFieldError": [Function],
+                      "setFieldTouched": [Function],
+                      "setFieldValue": [Function],
+                      "setFormikState": [Function],
+                      "setStatus": [Function],
+                      "setSubmitting": [Function],
+                      "setTouched": [Function],
+                      "setValues": [Function],
+                      "submitCount": 0,
+                      "submitForm": [Function],
+                      "touched": Object {},
+                      "unregisterField": [Function],
+                      "validate": undefined,
+                      "validateField": [Function],
+                      "validateForm": [Function],
+                      "validateOnBlur": true,
+                      "validateOnChange": true,
+                      "validationSchema": [Function],
+                      "values": Object {
+                        "email": "",
+                        "password": "",
+                      },
+                    }
+                  }
+                >
+                  <form
+                    onReset={[Function]}
+                    onSubmit={[Function]}
+                  >
+                    <FormikConnect(FieldInner)
+                      component={[Function]}
+                      fluid={true}
+                      name="email"
+                      placeholder="Email"
+                    >
+                      <FieldInner
+                        component={[Function]}
+                        fluid={true}
+                        formik={
+                          Object {
+                            "dirty": false,
+                            "errors": Object {},
+                            "handleBlur": [Function],
+                            "handleChange": [Function],
+                            "handleReset": [Function],
+                            "handleSubmit": [Function],
+                            "initialValues": Object {
+                              "email": "",
+                              "password": "",
+                            },
+                            "isSubmitting": false,
+                            "isValid": false,
+                            "isValidating": false,
+                            "registerField": [Function],
+                            "resetForm": [Function],
+                            "setError": [Function],
+                            "setErrors": [Function],
+                            "setFieldError": [Function],
+                            "setFieldTouched": [Function],
+                            "setFieldValue": [Function],
+                            "setFormikState": [Function],
+                            "setStatus": [Function],
+                            "setSubmitting": [Function],
+                            "setTouched": [Function],
+                            "setValues": [Function],
+                            "submitCount": 0,
+                            "submitForm": [Function],
+                            "touched": Object {},
+                            "unregisterField": [Function],
+                            "validate": undefined,
+                            "validateField": [Function],
+                            "validateForm": [Function],
+                            "validateOnBlur": true,
+                            "validateOnChange": true,
+                            "validationSchema": [Function],
+                            "values": Object {
+                              "email": "",
+                              "password": "",
+                            },
+                          }
+                        }
+                        name="email"
+                        placeholder="Email"
+                      >
+                        <InputField
+                          field={
+                            Object {
+                              "name": "email",
+                              "onBlur": [Function],
+                              "onChange": [Function],
+                              "value": "",
+                            }
+                          }
+                          fluid={true}
+                          form={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "email": "",
+                                "password": "",
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "values": Object {
+                                "email": "",
+                                "password": "",
+                              },
+                            }
+                          }
+                          placeholder="Email"
+                        >
+                          <div
+                            className="f1urtfz"
+                          >
+                            <Input
+                              fluid={true}
+                              name="email"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              placeholder="Email"
+                              type="text"
+                              value=""
+                            >
+                              <div
+                                className="ui fluid input"
+                              >
+                                <input
+                                  name="email"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  placeholder="Email"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </Input>
+                          </div>
+                        </InputField>
+                      </FieldInner>
+                    </FormikConnect(FieldInner)>
+                    <FormikConnect(FieldInner)
+                      component={[Function]}
+                      fluid={true}
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                    >
+                      <FieldInner
+                        component={[Function]}
+                        fluid={true}
+                        formik={
+                          Object {
+                            "dirty": false,
+                            "errors": Object {},
+                            "handleBlur": [Function],
+                            "handleChange": [Function],
+                            "handleReset": [Function],
+                            "handleSubmit": [Function],
+                            "initialValues": Object {
+                              "email": "",
+                              "password": "",
+                            },
+                            "isSubmitting": false,
+                            "isValid": false,
+                            "isValidating": false,
+                            "registerField": [Function],
+                            "resetForm": [Function],
+                            "setError": [Function],
+                            "setErrors": [Function],
+                            "setFieldError": [Function],
+                            "setFieldTouched": [Function],
+                            "setFieldValue": [Function],
+                            "setFormikState": [Function],
+                            "setStatus": [Function],
+                            "setSubmitting": [Function],
+                            "setTouched": [Function],
+                            "setValues": [Function],
+                            "submitCount": 0,
+                            "submitForm": [Function],
+                            "touched": Object {},
+                            "unregisterField": [Function],
+                            "validate": undefined,
+                            "validateField": [Function],
+                            "validateForm": [Function],
+                            "validateOnBlur": true,
+                            "validateOnChange": true,
+                            "validationSchema": [Function],
+                            "values": Object {
+                              "email": "",
+                              "password": "",
+                            },
+                          }
+                        }
+                        name="password"
+                        placeholder="Password"
+                        type="password"
+                      >
+                        <InputField
+                          field={
+                            Object {
+                              "name": "password",
+                              "onBlur": [Function],
+                              "onChange": [Function],
+                              "value": "",
+                            }
+                          }
+                          fluid={true}
+                          form={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "email": "",
+                                "password": "",
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "values": Object {
+                                "email": "",
+                                "password": "",
+                              },
+                            }
+                          }
+                          placeholder="Password"
+                          type="password"
+                        >
+                          <div
+                            className="f1urtfz"
+                          >
+                            <Input
+                              fluid={true}
+                              name="password"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              placeholder="Password"
+                              type="password"
+                              value=""
+                            >
+                              <div
+                                className="ui fluid input"
+                              >
+                                <input
+                                  name="password"
+                                  onBlur={[Function]}
+                                  onChange={[Function]}
+                                  placeholder="Password"
+                                  type="password"
+                                  value=""
+                                />
+                              </div>
+                            </Input>
+                          </div>
+                        </InputField>
+                      </FieldInner>
+                    </FormikConnect(FieldInner)>
+                    <Button
+                      as="button"
+                      fluid={true}
+                      primary={true}
+                      type="submit"
+                    >
+                      <button
+                        className="ui fluid primary button"
+                        onClick={[Function]}
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </Button>
+                    <Message
+                      className="fsuivmx"
+                    >
+                      <div
+                        className="ui message fsuivmx"
+                      >
+                        <Link
+                          replace={false}
+                          to="/login"
+                        >
+                          <a
+                            href="/login"
+                            onClick={[Function]}
+                          >
+                            Already have an account?
+                          </a>
+                        </Link>
+                      </div>
+                    </Message>
+                  </form>
+                </Component>
+              </Form>
+            </InnerSignUpForm>
+          </Formik>
+        </WithFormik(InnerSignUpForm)>
+      </div>
+    </Container>
+  </BaseAuthPage>
+</SignUpPage>
+`;

@@ -10,6 +10,7 @@ if (module.hot) {
     console.log("🔁  HMR Reloading `./server`...");
     try {
       app = require("./server").default;
+      console.log("Accepted changes");
     } catch (error) {
       console.error(error);
     }

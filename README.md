@@ -1,19 +1,26 @@
-# TypeScript-Redux-Sagas-SSR
+# modern-webapp
 
-This is a project boilerplate that uses Redux Sagas and Typescript
+A highly opinionated boilerplate on how best to make webapps in 2019.
 
-## Features
-* Server Side Rendering (SSR)
-* Hot Module Reloading
-* React-Router style routing in routes.ts
-* Initial actions being fired upon page load
-* Integration with TSLint and Prettier
+Todo:
+- Add unit tests for services
+- Add integration tests
 
-## Technologies
+### Features:
+- Server Side Rendering (SSR)
+- Hot Module Reloading
+- React-router style routing, with options to trigger actions on pageload
+- Integration with TSLint and Prettier
+- A working auth system, complete with password reset functionality
+
+### Technologies
 - Express
 - Razzle
 - React
 - React-Router
 - Redux
-- Redux Sagas
+- Redux-Saga
 - Typestyle
+- Postgres
+- Redis
+- Docker

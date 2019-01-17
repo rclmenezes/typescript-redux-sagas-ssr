@@ -1,18 +1,15 @@
 import React from "react";
-import { RouteComponentProps, StaticRouterContext } from "react-router";
 import { Route } from "react-router-dom";
+
+import { PageRoutingProps } from "../../utils/routing";
 
 interface StatusProps {
   code: number;
 }
 
-interface Context extends StaticRouterContext {
-  status?: number;
-}
-
 const Status: React.SFC<StatusProps> = ({ code, children }) => (
   <Route
-    render={({ staticContext }: RouteComponentProps<any, Context, any>) => {
+    render={({ staticContext }: PageRoutingProps<any>) => {
       if (staticContext) {
         staticContext.status = code;
       }

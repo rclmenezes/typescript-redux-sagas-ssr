@@ -1,0 +1,27 @@
+web:
+  build: .
+  volumes:
+    - ".:/src/"
+  ports:
+    - "3000:3000"
+  links:
+    - db
+    - redis
+  environment:
+    POSTGRES_DB: postgres
+    POSTGRES_HOSTNAME: db
+
+db:
+  build: db
+
+  ports:
+    - "5432:5432"
+  environment:
+    POSTGRES_DB: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_USER: postgres
+
+redis:
+  image: redis:5
+  ports:
+    - "6379:6379"

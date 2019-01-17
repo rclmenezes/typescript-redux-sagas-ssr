@@ -1,12 +1,7 @@
-import { AxiosError } from "axios";
-import actionCreatorFactory from "typescript-fsa";
-
-import { UserState } from "../reducers/user";
-
-const factory = actionCreatorFactory("API");
+import authActionCreators from "./auth";
 
 const actionCreators = {
-  apiTest: factory.async<{}, UserState, AxiosError>("API_TEST"),
+  ...authActionCreators,
 };
 
 export default actionCreators;

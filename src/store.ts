@@ -6,11 +6,11 @@ import createSagaMiddleware from "redux-saga";
 
 import { createRootReducer, RootState } from "./reducers";
 import rootSaga from "./sagas";
-import { IS_CLIENT, IS_DEBUG } from "./settings";
+import { IS_CLIENT, IS_PRODUCTION } from "./settings";
 
 type AnyHistory = History | MemoryHistory;
 
-const makeStore = (initialState: RootState, history: AnyHistory) => {
+const makeStore = (initialState: Partial<RootState>, history: AnyHistory) => {
   const sagaMiddleware = createSagaMiddleware();
 
   const middleware: Middleware[] = [sagaMiddleware];
@@ -18,13 +18,13 @@ const makeStore = (initialState: RootState, history: AnyHistory) => {
     middleware.push(routerMiddleware(history));
   }
 
-  if (IS_CLIENT && IS_DEBUG) {
+  if (IS_CLIENT && !IS_PRODUCTION) {
     middleware.push(createLogger());
   }
 
   const enhancers = [applyMiddleware(...middleware)];
-  if (typeof window === "object" && typeof window.devToolsExtension !== "undefined") {
-    enhancers.push(window.devToolsExtension());
+  if (typeof window === "object" && typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== "undefined") {
+    enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__());
   }
 
   const store = createStore(createRootReducer(history), initialState, compose(...enhancers));

@@ -20,7 +20,7 @@ interface Context extends StaticRouterContext {
   status?: number;
 }
 
-const createAppHtml = async (req: Request, res: Response, initialState: RootState) => {
+const createAppHtml = async (req: Request, res: Response, initialState: Partial<RootState>) => {
   const context: Context = {}; // StaticRouter may change this variable...
   const history = createMemoryHistory();
   const store = configureStore(initialState, history);
@@ -40,17 +40,16 @@ const createAppHtml = async (req: Request, res: Response, initialState: RootStat
   await saga.done;
   const state = store.getState();
 
+  // If the page tells us to deliver a non-200
   if (context.status) {
     res.status(context.status);
   }
   return { html, state };
 };
 
-const renderHtml = async (req: Request, res: Response, initialState: RootState) => {
+const renderHtml = async (req: Request, res: Response, initialState: Partial<RootState>) => {
   const { html, state } = await createAppHtml(req, res, initialState);
   const headAssets = Helmet.renderStatic();
-
-  // <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
 
   return `
   <!doctype html>
@@ -60,6 +59,7 @@ const renderHtml = async (req: Request, res: Response, initialState: RootState) 
       ${headAssets.meta.toString()}
       ${headAssets.link.toString()}
       
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"></link>
       <style id="styles-target">
         ${getStyles()}
       </style>

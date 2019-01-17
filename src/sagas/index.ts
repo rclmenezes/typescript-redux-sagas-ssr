@@ -1,10 +1,9 @@
 import { all } from "redux-saga/effects";
 
-import actionCreators from "../actions";
-import pageLoadSaga from "./pageLoadSaga";
+import authSagas from "./auth";
 
-const pageLoadSagas = [pageLoadSaga(actionCreators.apiTest, "/api/test")];
+// const pageLoadSagas = [pageLoadSaga(actionCreators.login, "/api/test")];
 
 export default function* rootSaga() {
-  yield all([...pageLoadSagas]);
+  yield all([...authSagas]);
 }

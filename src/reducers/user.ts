@@ -2,13 +2,20 @@ import { reducerWithInitialState } from "typescript-fsa-reducers";
 
 import actionCreators from "../actions";
 
-export type UserState = {
-  name: string;
-} | null;
+export interface User {
+  id: number;
+  email: string;
+}
 
-export const user = reducerWithInitialState<UserState>(null).cases(
-  [actionCreators.apiTest.done],
-  (state, payload) => {
-    return payload.result;
-  },
-);
+export type UserState = User | null;
+
+export const user = reducerWithInitialState<UserState>(null)
+  .cases(
+    [actionCreators.login.done, actionCreators.resetPassword.done, actionCreators.signUp.done],
+    (state, payload) => {
+      return payload.result;
+    },
+  )
+  .cases([actionCreators.logout.done], (state, payload) => {
+    return null;
+  });
